@@ -1,0 +1,438 @@
+/* Root-level CSS variables for consistent theming throughout the app. */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --accent-color: #3b82f6;
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --text-light: #6b7280;
+  --border-color: #000000;
+  --input-bg-color: #ffffff;
+  --section-spacing: 2rem;
+  --container-width: 1200px;
+}
+
+/* Base body styles. */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f3f4f6;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* General container styling. */
+.container {
+  max-width: var(--container-width);
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+}
+
+/* Headings styles. */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: var(--section-spacing) 0 1rem;
+  color: var(--text-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-color);
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+/* Basic form layout. */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Input fields, textarea, and select styling. */
+form input, form textarea, form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus state for form elements. */
+form input:focus, form textarea:focus, form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Primary button styling. */
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Button hover effect. */
+form button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Portfolio preview box. */
+.portfolio {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+/* Section layout within the portfolio. */
+.portfolio .section {
+  margin-bottom: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Removes border from last section. */
+.portfolio .section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Portfolio heading styles. */
+.portfolio h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.portfolio h2 {
+  color: var(--secondary-color);
+  font-size: 1.875rem;
+  margin: 1.5rem 0;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+.portfolio h3 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* General paragraph styling. */
+.portfolio p {
+  color: var(--text-color);
+  margin: 0.5rem 0;
+}
+
+/* Project card styles. */
+.portfolio .project {
+  background-color: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--secondary-color);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+/* Skill tags layout. */
+.portfolio .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* Skill tag styling. */
+.portfolio .skills-list span {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Alternate skill colors for variety. */
+.portfolio .skills-list span:nth-child(even) {
+  background: var(--secondary-color);
+}
+
+/* Contact info links layout. */
+.portfolio .contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Contact info links styling. */
+.portfolio .contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 0.375rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: all 0.2s ease;
+}
+
+/* Hover effect for contact links. */
+.portfolio .contact-info a:hover {
+  background-color: rgba(37, 99, 235, 0.2);
+  border-bottom-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Styling for project links. */
+.portfolio .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+/* Hover effect for project links. */
+.portfolio .project-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Responsive tweaks for tablets and phones. */
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 1rem;
+  }
+
+  .portfolio h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio h2 {
+    font-size: 1.5rem;
+  }
+
+  .portfolio .contact-info {
+    flex-direction: column;
+  }
+
+  .portfolio .contact-info a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Color customization section grid layout. */
+.color-customization {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(37, 99, 235, 0.05);
+  border-radius: 0.5rem;
+}
+
+/* Individual color picker container. */
+.color-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Color label styling. */
+.color-group label {
+  min-width: 150px;
+  color: var(--text-color);
+}
+
+/* Color input field. */
+.color-group input[type="color"] {
+  width: 50px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  background: none;
+}
+
+/* Remove padding around color swatch. */
+.color-group input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+/* Style the actual color square. */
+.color-group input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.375rem;
+}
+
+/* Responsive behavior for color customization on smaller screens. */
+@media (max-width: 768px) {
+  .color-customization {
+    grid-template-columns: 1fr;
+  }
+  
+  .color-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .color-group label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Additional form container styling. */
+.form-container {
+  max-width: var(--container-width);
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+}
+
+/* Redundant form input styles for .form-container forms. */
+.form-container form input, 
+.form-container form textarea, 
+.form-container form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus effect for inputs in form-container. */
+.form-container form input:focus, 
+.form-container form textarea:focus, 
+.form-container form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* More portfolio section styling. */
+.portfolio {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.portfolio .section {
+  margin-bottom: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio .section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Portfolio header colors. */
+.portfolio h1 {
+  color: var(--primary-color);
+}
+
+/* Headings and links color inside portfolio. */
+.portfolio h2, .portfolio h3, .portfolio h4 {
+  color: var(--text-color);
+}
+
+.portfolio a {
+  color: var(--primary-color);
+}
+
+.portfolio a:hover {
+  color: var(--secondary-color);
+}
+
+/* Project and skills styling. */
+.portfolio .project {
+  background-color: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--secondary-color);
+}
+
+.portfolio .project h3 {
+  color: var(--secondary-color);
+}
+
+.portfolio .skills-list span {
+  background: var(--primary-color);
+}
+
+.portfolio .skills-list span:nth-child(even) {
+  background: var(--secondary-color);
+}
+
+/* Contact links styling and hover effect. */
+.portfolio .contact-info a {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.portfolio .contact-info a:hover {
+  background-color: rgba(37, 99, 235, 0.2);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Section headings. */
+.portfolio h2 {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+  

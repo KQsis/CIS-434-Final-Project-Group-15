@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Title shown in the browser tab -->
+  <title>Professional Portfolio Builder</title>
+    <!-- Links to custom CSS for styling and fonts -->
+  <link rel="stylesheet" href="PortfolioStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- jsPDF library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Main container for the entire layout -->
+  <div class="container" id="themeContainer">
+        <!-- Header section with title and subtitle -->
+    <header>
+      <h1><i class="fas fa-user-circle"></i> Portfolio Builder</h1>
+      <p class="subtitle">Create your professional portfolio in minutes</p>
+    </header>
+    <!-- Portfolio form where users enter all their details -->
+    <form id="portfolioForm">
+
+      <!-- COLOR CUSTOMIZATION -->
+      <div class="form-section">
+        <h2><i class="fas fa-paint-brush"></i> Color Customization</h2>
+        <div class="color-customization">
+          <!-- Primary color input -->
+          <div class="color-group">
+            <label for="primaryColor">Primary Color:</label>
+            <input type="color" id="primaryColor" value="#2563eb">
+          </div>
+          <!-- Text color input -->
+          <div class="color-group">
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor" value="#1f2937">
+          </div>
+          <!-- Background color input -->
+          <div class="color-group">
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#ffffff">
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL INFORMATION -->
+      <div class="form-section">
+        <h2><i class="fas fa-user"></i> Personal Information</h2>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone">
+        </div>
+        <!-- Short Professional Bio -->
+        <div class="form-group">
+          <label for="bio">Professional Bio</label>
+          <textarea id="bio" rows="4" placeholder="Write a brief introduction about yourself..."></textarea>
+        </div>
+        <!-- LinkedIn URL -->
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile URL</label>
+          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/your-profile">
+        </div>
+        <!-- GitHub URL -->
+        <div class="form-group">
+          <label for="github">GitHub Profile URL</label>
+          <input type="url" id="github" placeholder="https://github.com/your-username">
+        </div>
+      </div>
+
+      <!-- SKILLS SECTION -->
+      <div class="form-section">
+        <h2><i class="fas fa-code"></i> Skills</h2>
+        <div class="form-group">
+          <label for="skills">Technical Skills (comma separated)</label>
+          <input type="text" id="skills" placeholder="e.g., JavaScript, Python, React, Node.js">
+        </div>
+      </div>
+
+      <!-- PROJECTS SECTION -->
+      <div class="form-section">
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+        <!-- Project 1 -->
+        <div class="form-group">
+          <label for="project1">Project 1</label>
+          <textarea id="project1" rows="3" placeholder="Title | Description | Link"></textarea>
+        </div>
+        <!-- Project 2 -->
+        <div class="form-group">
+          <label for="project2">Project 2</label>
+          <textarea id="project2" rows="3" placeholder="Title | Description | Link"></textarea>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE SECTION -->
+      <div class="form-section">
+        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        <div class="form-group">
+          <label for="experience">Work Experience</label>
+          <textarea id="experience" rows="4" placeholder="Job Title | Company | Duration | Description"></textarea>
+        </div>
+      </div>
+
+      <!-- EDUCATION SECTION -->
+      <div class="form-section">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="form-group">
+          <label for="education">Educational Background</label>
+          <textarea id="education" rows="3" placeholder="Degree | School | Year"></textarea>
+        </div>
+      </div>
+
+      <!-- CONTACT MESSAGE SECTION -->
+      <div class="form-section">
+        <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <div class="form-group">
+          <label for="contactMessage">Contact Message</label>
+          <textarea id="contactMessage" rows="3" placeholder="Write a message for potential employers..."></textarea>
+        </div>
+      </div>
+
+      <!-- Generate Portfolio and PDF Download Buttons -->
+      <div class="button-group">
+         <!-- Button to generate the portfolio preview -->
+        <button type="submit" class="primary-button">
+          <i class="fas fa-magic"></i> Generate Portfolio
+        </button>
+        <!-- Button to download portfolio as PDF -->
+        <button type="button" onclick="downloadPDF()" class="secondary-button">
+          <i class="fas fa-download"></i> Download PDF
+        </button>
+      </div>
+    </form>
+
+    <!-- This is where the generated portfolio preview will be rendered -->
+    <div id="portfolioOutput" class="portfolio"></div>
+  </div>
+
+  <!-- Link to JavaScript file containing logic -->
+  <script src="PortfolioScripts.js"></script>
+</body>
+</html>
