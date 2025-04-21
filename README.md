@@ -1,3 +1,3 @@
-To be able to use this application as of now you must also download the launch.json file in order for the application to launch properly. 
+The link to this project is below:
 
-This project should be entirely ran through an application such as VScode but in the future it would be implemented to be accessed via browser and the internet.
+https://portfoliogeneratorg15.netlify.app/
