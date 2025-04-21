@@ -196,8 +196,8 @@ function downloadPDF() {
   const doc = new jsPDF();
   
   doc.html(document.getElementById("portfolioOutput"), {
-    callback: function (pdf) {
-      pdf.save("portfolio.pdf");
+    callback: function (doc) {
+      doc.save("portfolio.pdf");
     },
     x: 10,
     y: 10,
