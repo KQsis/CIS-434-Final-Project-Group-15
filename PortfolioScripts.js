@@ -193,7 +193,7 @@ form.addEventListener("submit", function(e) {
 // This function will allow the user to create a PDF Download.
 function downloadPDF() {
   const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+  var doc = new jsPDF();
   
   doc.html(document.getElementById("portfolioOutput"), {
     callback: function (doc) {
